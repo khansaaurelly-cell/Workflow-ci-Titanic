@@ -7,7 +7,6 @@ import os
 # mengload data
 df = pd.read_csv("titanic_preprocessing.csv")
 
-# memisahkan antara fitur dan target
 X = df.drop("Survived", axis=1)
 y = df["Survived"]
 
