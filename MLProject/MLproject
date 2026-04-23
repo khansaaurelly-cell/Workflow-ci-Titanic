@@ -1,7 +1,10 @@
-name: titanic_project
+name: Titanic Model Training
 
-conda_env: conda.yaml
+conda_env: MLProject/conda.yaml
 
 entry_points:
   main:
-    command: "python modelling.py"
+    command: "python MLProject/modelling.py"
+    parameters:
+      batch_size: {type: int, default: 64}
+      epochs: {type: int, default: 10}

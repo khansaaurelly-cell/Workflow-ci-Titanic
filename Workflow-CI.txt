@@ -1,0 +1,19 @@
+# Workflow CI untuk Titanic Model Training
+
+## Deskripsi
+Workflow CI ini dibuat untuk otomatisasi training model machine learning pada dataset Titanic. Workflow ini dijalankan menggunakan GitHub Actions yang memungkinkan model untuk dilatih secara otomatis setiap kali ada perubahan pada repositori.
+
+### Langkah-langkah dalam Workflow CI
+1. Set Up Python Menggunakan `actionssetup-python@v3` untuk mengatur Python version 3.13 di runner.
+2. Install Dependencies Menggunakan `pip install -r requirements.txt` untuk menginstal semua dependencies yang diperlukan.
+3. Run Model Training Melakukan training model dengan menjalankan script `modelling.py` yang ada di folder `MLProject`. Di dalamnya, model dilatih menggunakan dataset Titanic yang telah diproses.
+4. Upload Artifact Setelah model selesai dilatih, model disimpan di folder `outputs` dan di-upload sebagai artifact dengan nama `model`.
+
+## Struktur Folder
+- `.githubworkflows` Berisi file konfigurasi GitHub Actions (`ci.yml`).
+- `MLProject` Berisi file project seperti `modelling.py`, `conda.yaml`, `titanic_preprocessing.csv`.
+- `requirements.txt` Menyimpan daftar dependencies untuk proyek ini.
+- `outputs` Folder untuk menyimpan model yang telah dilatih.
+
+## Hasil yang Diharapkan
+Setelah workflow selesai dijalankan, model akan disimpan sebagai artifact di GitHub Actions dan bisa diunduh untuk digunakan lebih lanjut.
